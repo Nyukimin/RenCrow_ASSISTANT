@@ -34,6 +34,20 @@ Stack-chan / Stack-chan Mini / Apple Watch / iPhone / Web
 - **Deviceは触れさせる**: 音声、表情、振動、画面、ボタンを端末能力に合わせて提供する。
 - **COREは考える**: Agent対話、記憶、知識、調査、生成、複数工程のTaskを担当する。
 
+PORTAL、CMD、ASSISTANTはCOREの周囲に置く兄弟moduleです。Chat、IdleChat、event、
+session、audio、Task、errorの意味は共通化し、ASSISTANTはそこへproactive trigger、
+Device delivery、personal／family／Routine状態を追加します。
+
+```text
+PORTAL    = RenCrow Interaction Client + Web Renderer
+CMD       = RenCrow Interaction Client + Terminal Renderer
+ASSISTANT = RenCrow Interaction Client + Proactive Trigger + Device Delivery
+            + Assistant-owned state
+```
+
+ASSISTANTはPORTALのPUSH機能ではありません。PORTALが閉じていても常時動く独立serviceで、
+COREを必要としない決定論的Routineとcache済み配信を継続します。
+
 ## 主な機能
 
 - 個人用・家族用の目覚ましと通知
@@ -55,6 +69,10 @@ Stack-chan / Stack-chan Mini / Apple Watch / iPhone / Web
 | Web Viewer、履歴・設定画面、許可された操作UI | `RenCrow_PORTAL` |
 | Stack-chan firmware/MOD、watchOS appなどの端末client | ASSISTANTのdevice contractを使うclient artifact |
 | LLM / STT / TTS / Vision演算 | 各capability moduleと外部target |
+
+一般ニュースの共通収集結果、provenance、重複排除、時系列、共通知識・検索への昇格は
+COREの共通知識基盤または将来の専用News moduleを正本とします。ASSISTANTは利用者別の
+選定、既読、時刻、件数、PUSH、deliveryを所有します。
 
 ## 配布方針
 
