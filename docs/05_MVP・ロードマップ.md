@@ -2,7 +2,9 @@
 
 ## 実装状態
 
-現在は仕様確定・実装前です。すべてのruntime機能はplannedです。
+`assistant-core` Interaction profileと、必須`trace_id`を維持してdisplay／speaker／hapticsへ
+変換するdevice delivery rendererはfoundation実装済みです。Go server、永続化、
+Routine、PUSH、acknowledgementはplannedです。
 
 ## MVP
 

@@ -9,8 +9,9 @@ Mio、Shiro、Midori、Kuroと同列のAgent人格ではありません。利用
 
 ## 現在の状態
 
-仕様確定・実装前です。このrepositoryにはまず責務境界とMVP仕様を置きます。
-Go binary、API、端末client、永続化はまだ利用可能ではありません。
+Interaction profileと端末能力別delivery rendererのfoundationを実装しています。
+Go server、Routine scheduler、PUSH、acknowledgement、永続化、端末clientはまだ
+利用可能ではありません。
 
 ## 位置づけ
 

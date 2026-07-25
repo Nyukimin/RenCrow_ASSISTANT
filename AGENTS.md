@@ -20,7 +20,8 @@
 - この repository は ASSISTANT の source、API、設定、build、test、CI、tag、Release、
   module 固有仕様の正本です。
 - `RenCrow_EcoSystem` は repository 間の境界と検証済み組み合わせだけを所有します。
-- 現在は仕様確定・実装前です。文書にある機能を実装済みとして報告しません。
+- 現在はInteraction profileとdevice delivery rendererのfoundationのみ実装済みです。
+  server、Routine、PUSH、永続化、端末clientを実装済みとして報告しません。
 
 ## Ownership
 
