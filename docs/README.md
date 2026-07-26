@@ -18,5 +18,6 @@
 - Web UIの表示・操作仕様は`RenCrow_PORTAL`が正本です。
 - 端末固有の実装詳細は各client artifactに置き、ASSISTANTは共通device contractを所有します。
 
-現在はInteraction profileとdevice delivery rendererのfoundationのみ実装済みです。
-実装済みの契約と将来計画を混同しません。
+現在はInteraction profile、device delivery renderer、local-first Delivery記録、
+COREの既存LINE adapterを使う手動通知CLIまで実装済みです。常駐server、Routine、
+acknowledgement、snooze、端末clientは未実装です。実装済みの契約と将来計画を混同しません。

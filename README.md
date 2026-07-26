@@ -9,9 +9,21 @@ Mio、Shiro、Midori、Kuroと同列のAgent人格ではありません。利用
 
 ## 現在の状態
 
-Interaction profileと端末能力別delivery rendererのfoundationを実装しています。
-Go server、Routine scheduler、PUSH、acknowledgement、永続化、端末clientはまだ
-利用可能ではありません。
+Interaction profile、端末能力別delivery renderer、local-firstのDelivery記録、
+既存CORE LINE transportを利用する手動通知CLIを実装しています。Routine scheduler、
+acknowledgement、snooze、端末client、常駐serverはまだ利用可能ではありません。
+
+現行のLINE通知入口:
+
+```bash
+go run ./cmd/rencrow-assistant notify line \
+  --user user-001 \
+  --title RenCrow \
+  --body '通知テストです。'
+```
+
+既定ではlocalhostのCORE `http://127.0.0.1:18790`へ接続します。再実行時の重複を
+避ける場合は、最初に表示された`delivery_id`と`trace_id`をそのまま指定します。
 
 ## 位置づけ
 

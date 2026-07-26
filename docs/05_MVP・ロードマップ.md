@@ -2,9 +2,10 @@
 
 ## 実装状態
 
-`assistant-core` Interaction profileと、必須`trace_id`を維持してdisplay／speaker／hapticsへ
-変換するdevice delivery rendererはfoundation実装済みです。Go server、永続化、
-Routine、PUSH、acknowledgementはplannedです。
+`assistant-core` Interaction profile、必須`trace_id`を維持してdisplay／speaker／hapticsへ
+変換するdevice delivery renderer、local-first Delivery JSONL、COREの既存LINE adapterを
+使う手動通知CLIは実装済みです。LINE通知は単一利用者のlocalhost MVPです。Go常駐server、
+Routine scheduler、複数利用者のrecipient mapping、acknowledgement、snoozeはplannedです。
 
 ## MVP
 
@@ -28,9 +29,9 @@ acknowledgementまたはsnoozeがserver状態へ戻ることです。
 ## 実装順序
 
 1. Go serverの起動、health、設定読込
-2. User、Device、Routine、Deliveryの最小data model
+2. User、Device、Routineの最小data modelと現行Delivery記録のserver統合
 3. 決定論的schedulerと目覚まし
-4. WebSocket PUSH、acknowledgement、snooze、重複防止
+4. WebSocket PUSH、acknowledgement、snooze、現行LINE receiptと共通の重複防止
 5. Interaction outputとChat／event／errorのCORE contract test
 6. Web clientによるE2E
 7. Stack-chan MOD試作とcapability negotiation
@@ -38,6 +39,10 @@ acknowledgementまたはsnoozeがserver状態へ戻ることです。
 9. CORE Taskへの任意昇格と結果delivery
 10. family scopeと複数利用者の権限分離
 11. Apple Watch app、交通、ニュース
+
+実装済みLINE縦断はRoutine schedulerより先にtransport境界を固定するfoundationであり、
+Apple Watch native appの完成を意味しません。現状はLINE公式アカウントからiPhoneへ届く
+通知をwatchOSのLINE通知ミラー設定で表示する経路を対象にします。
 
 ニュース段階では、報道RSS/APIを基準sourceとし、XとRedditを話題・反応sourceとして追加します。source type、元URL、観測時刻、裏取り状態、rate limit時のdegraded継続をcontract testで固定してから個人ニュース選定へ進みます。
 
