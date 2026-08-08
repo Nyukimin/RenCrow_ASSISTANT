@@ -39,7 +39,7 @@ ASSISTANT が所有します。
 ASSISTANT は所有しません。
 
 - Mio、Shiro、Midori、KuroなどのAgent人格、Agent routing、Agent memory
-- Knowledge、Recall、複数Agent協議、長時間の問題解決、承認付きside effect
+- Knowledge、Recall、複数Agent協議、長時間の問題解決、同期policy判定を伴うside effect
 - `RenCrow_PORTAL` のWeb画面、CORE Debug Viewer、Ops、Repair、LLM管理
 - LLM、STT、TTS、Visionの演算runtime
 - 横断browser sidecarや再利用可能なdata converter
