@@ -103,3 +103,9 @@ primary runtimeはGo binary `rencrow-assistant`とします。静的設定とsec
 ## Documentation
 
 正本の読む順番は[docs/README.md](docs/README.md)を参照してください。
+
+## Check Plan
+
+`config/checks/runtime.json`はASSISTANT所有checkの正本です。現在は常駐serverが
+未実装のため、通常runtime Planではcheckを実行対象にせず、native Go buildを
+`deploy`、isolated COREを使う手動通知契約を`diagnostic` phaseへ延期します。

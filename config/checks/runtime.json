@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "purpose": "operational_status",
+  "phase": "runtime",
+  "checks": [
+    {
+      "check_id": "assistant_manual_notify_contract",
+      "guarantee_id": "assistant_manual_notify_contract_verified",
+      "owner": "RenCrow_ASSISTANT",
+      "purpose": "manual notification delivery contract",
+      "target": "go:test ./... with isolated httptest CORE",
+      "phase": "diagnostic",
+      "consumer": "ASSISTANT release acceptance",
+      "failure_action": "blocked",
+      "cost": "medium",
+      "safety_gate": false
+    },
+    {
+      "check_id": "assistant_source_build",
+      "guarantee_id": "assistant_go_binary_buildable",
+      "owner": "RenCrow_ASSISTANT",
+      "purpose": "native Go artifact build",
+      "target": "go:./cmd/rencrow-assistant",
+      "phase": "deploy",
+      "consumer": "ASSISTANT deployment gate",
+      "failure_action": "blocked",
+      "cost": "medium",
+      "safety_gate": false
+    }
+  ]
+}
