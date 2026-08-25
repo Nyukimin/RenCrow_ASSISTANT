@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "steps": [
+    {
+      "name": "windows-vet",
+      "workingDirectory": ".",
+      "filePath": "go",
+      "arguments": ["vet", "./..."],
+      "testFiles": ["**/*_test.go"]
+    },
+    {
+      "name": "windows-build",
+      "workingDirectory": ".",
+      "filePath": "go",
+      "arguments": ["build", "./..."]
+    }
+  ]
+}
