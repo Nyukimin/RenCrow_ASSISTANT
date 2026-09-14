@@ -8,6 +8,13 @@
 
 ## 必要なときに読む
 
+1. `<WORKSPACE>/AGENTS.md`
+2. このファイル
+3. `README.md`
+4. `docs/README.md`
+5. 対象領域の現行仕様
+6. 関連する実装、test、config
+
 対象の`README.md`／`docs/README.md`から現行仕様を選ぶ。下表の該当節だけを作業前に読み、対象外の節や他moduleの詳細をまとめて読まない。製品契約の不足は実装・test・production wiringと照合してowner正本へ反映する。
 
 | 作業 | 必須の参照 |
